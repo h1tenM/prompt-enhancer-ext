@@ -36,9 +36,9 @@ if not os.path.exists(DB_DIR):
         "Few-shot prompting: Provide 1-2 examples of the desired input and output.",
         "Ask the LLM to 'think step-by-step' to improve reasoning quality."
     ]
-    vectorstore = Chroma.from_texts(initial_data, embeddings, persist_directory="./db")
+    vectorstore = Chroma.from_texts(initial_data, embeddings, persist_directory=DB_DIR)
 else:
-    vectorstore = Chroma(persist_directory="./db", embedding_function=embeddings)
+    vectorstore = Chroma(persist_directory=DB_DIR, embedding_function=embeddings)
 
 google_key = os.getenv('GOOGLE_API_KEY')
 if not google_key:
@@ -95,9 +95,10 @@ async def enhance_prompt(request: PromptRequest):
     response = llm.invoke(final_query)
     
     # D. Calculatee Metric
-    estimated_tokens_saved = (len(response.content[0]['text']) // 4) * 2
-    
-    print(response.content[0]['text'])
+    content_text = response.content[0]['text'] if isinstance(response.content, list) else response.content
+
+    estimated_tokens_saved = (len(content_text) // 4) * 2
+    # print(content_text)
     
     return {
         "enhanced_prompt": response.content,

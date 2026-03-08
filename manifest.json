@@ -7,5 +7,5 @@
 		"default_popup": "popup.html",
 		"default_title": "Enhance Prompt"
 	},
-	"host_permissions": ["http://localhost:8000/*"]
+	"host_permissions": ["https://prompt-enhancer-ext.onrender.com/*"]
 }
