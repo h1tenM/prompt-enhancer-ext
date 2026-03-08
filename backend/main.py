@@ -109,9 +109,6 @@ async def enhance_prompt(request: PromptRequest):
         }
     }
     
-@app.get("/health")
-async def health():
-    return {"status": "healthy"}
 
 
 if __name__ == "__main__":

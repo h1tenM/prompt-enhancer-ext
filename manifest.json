@@ -1,11 +1,17 @@
 {
 	"manifest_version": 3,
+
 	"name": "Prompt Enhancer RAG",
+
 	"version": "1.0",
+
 	"description": "Turn lazy prompts into master prompts.",
+
 	"action": {
 		"default_popup": "popup.html",
+
 		"default_title": "Enhance Prompt"
 	},
-	"host_permissions": ["https://prompt-enhancer-ext.onrender.com/*"]
+
+	"host_permissions": ["http://localhost:8000/*"]
 }

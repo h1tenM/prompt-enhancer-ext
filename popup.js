@@ -34,19 +34,16 @@ document.addEventListener("DOMContentLoaded", () => {
 			const reasoning = document.getElementById("reasoningSelect").value;
 			const format = document.getElementById("formatSelect").value;
 
-			const response = await fetch(
-				"https://prompt-enhancer-ext.onrender.com/enhance",
-				{
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({
-						prompt: text,
-						persona: persona,
-						reasoning: reasoning,
-						format: format,
-					}),
-				},
-			);
+			const response = await fetch("http://localhost:8000/enhance", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({
+					prompt: text,
+					persona: persona,
+					reasoning: reasoning,
+					format: format,
+				}),
+			});
 
 			if (!response.ok) throw new Error(`Server error: ${response.status}`);
 
@@ -58,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				throw new Error("Backend returned empty or invalid data");
 			}
 
-			// HANDLE BOTH ARRAY AND STRING FORMATS FROM API RESPONSE
+			// HANDLE BOTH ARRAY AND STRING FORMATS FROM API
 			let finalResult = "";
 			if (Array.isArray(data.enhanced_prompt)) {
 				finalResult = data.enhanced_prompt[0].text;
