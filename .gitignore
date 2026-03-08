@@ -1,0 +1,37 @@
+venv 
+# --- Environment / Secrets ---
+.env
+*.env
+.venv/
+env/
+venv/
+ENV/
+
+# --- Python / Backend ---
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+backend/api_key_test.py
+
+# --- Vector Database & Local Data ---
+# We keep the 'db' folder structure but ignore the actual data files 
+# to ensure everyone starts with a fresh or controlled index.
+# If you want judges to have your pre-indexed data, comment these out.
+backend/db/*.sqlite3
+backend/db/**/*.bin
+
+# --- OS / IDE Junk ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.log
+
+# --- Chrome Extension ---
+*.pem
+*.crx
+
+# --- Random Files ---
+notes.txt

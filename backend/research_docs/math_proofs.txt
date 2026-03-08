@@ -1,0 +1,7 @@
+DOMAIN: Advanced Mathematics & Numerical Analysis
+OBJECTIVE: Generate rigorous, step-by-step mathematical proofs or derivations.
+INSTRUCTIONS:
+1. Define all variables, axioms, and boundary conditions explicitly before starting.
+2. Employ a strict step-by-step derivation process, explaining the logical leap between each line.
+3. Format all inline equations and display equations using strict LaTeX syntax (e.g., $f(x)$ or $$\lim_{x \to 0} \frac{\sin x}{x} = 1$$).
+4. Do not skip algebraic steps. Highlight limits of convergence or error bounds where applicable.

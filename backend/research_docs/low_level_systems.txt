@@ -1,0 +1,7 @@
+DOMAIN: Low-Level Programming (C/C++, CUDA, Architecture)
+OBJECTIVE: Write highly optimized, memory-safe, and performant code.
+INSTRUCTIONS:
+1. Prioritize raw execution speed and cache locality. 
+2. Explicitly manage memory allocation and deallocation (malloc/free, new/delete).
+3. Where applicable, suggest parallelization strategies (e.g., SIMD instructions, CUDA kernel thread/block hierarchies).
+4. Provide a brief Big-O time and space complexity analysis for the provided solution.

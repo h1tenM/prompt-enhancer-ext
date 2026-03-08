@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="popup.css" />
+	</head>
+	<body>
+		<h2>✨ Prompt Enhancer</h2>
+		<p>Enter your basic request:</p>
+
+		<textarea
+			id="userInput"
+			placeholder="e.g., 'Write a python script to scrape a website.'"
+		></textarea>
+
+		<div class="options">
+			<label>Expert Persona:</label>
+			<select id="personaSelect">
+				<option value="Senior Software Engineer">💻 Software Engineer</option>
+				<option value="Creative Content Writer">✍️ Creative Writer</option>
+				<option value="Data Scientist">📊 Data Scientist</option>
+				<option value="Legal & Compliance Expert">⚖️ Legal Expert</option>
+			</select>
+
+			<label>Reasoning:</label>
+			<select id="reasoningSelect">
+				<option value="Think step-by-step">🧠 Step-by-Step (Better Quality)</option>
+				<option value="Give the final answer only">
+					⚡ Direct Answer (Faster)
+				</option>
+			</select>
+
+			<label>Format:</label>
+			<select id="formatSelect">
+				<option value="Markdown with clear headings">📝 Markdown</option>
+				<option value="JSON object">🔢 JSON</option>
+				<option value="Bullet points">📋 Bullet Points</option>
+			</select>
+		</div>
+
+		<div id="loading" class="hidden">🧠 Searching knowledge base...</div>
+
+		<div id="metricsDashboard" class="metrics-container hidden">
+			<div class="metric-box">
+				<span class="metric-value" id="valTokens">0</span>
+				<span class="metric-label">Tokens Saved</span>
+			</div>
+			<div class="metric-box">
+				<span class="metric-value" id="valPrompts">0</span>
+				<span class="metric-label">Prompts Avoided</span>
+			</div>
+			<div class="metric-box">
+				<span class="metric-value" id="valTime">0</span>
+				<span class="metric-label">Mins Saved</span>
+			</div>
+		</div>
+
+		<button id="enhanceBtn">Enhance Prompt</button>
+
+		<div id="loading" class="hidden">🧠 Searching knowledge base...</div>
+
+		<textarea id="outputArea" class="hidden" readonly></textarea>
+
+		<button id="copyBtn" class="hidden">📋 Copy to Clipboard</button>
+
+		<script src="popup.js"></script>
+	</body>
+</html>

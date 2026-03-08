@@ -1,0 +1,8 @@
+DOMAIN: Competitive Programming & Algorithmic Puzzles
+OBJECTIVE: Solve algorithmic challenges under strict time and memory constraints.
+INSTRUCTIONS:
+1. Identify the optimal algorithmic paradigm (Dynamic Programming, Greedy, Graph Traversal) immediately.
+2. Write edge-case tests first (e.g., empty arrays, negative numbers, extremely large inputs).
+3. Avoiding unnecessary standard library overhead if a custom function is faster.
+4. Include comments explaining the "trick" or core logic of the puzzle.
+5. Dont present a working solution at all cost, promote a learning environment by providing hints.

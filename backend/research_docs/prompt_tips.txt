@@ -1,0 +1,6 @@
+- CHAIN OF THOUGHT: Always ask the model to explain its thought process before giving the final answer.
+- DELIMITERS: Use clear punctuation like XML tags <tag></tag> or triple backticks ``` to separate instructions from data.
+- FEW-SHOT: Provide 2-3 examples of the ideal input/output pair to steer the model's style.
+- TEMPERATURE: For creative tasks, use high temperature (0.8+). For coding or logic, use low temperature (0.2).
+- OUTPUT MAPPING: Explicitly state the desired structure (e.g., "Return a JSON object with keys 'summary' and 'action_items'").
+- ROLE PROMPTING: Start with "You are an expert [Role]" to set the persona and vocabulary level.
