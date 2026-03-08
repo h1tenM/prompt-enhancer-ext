@@ -107,6 +107,10 @@ async def enhance_prompt(request: PromptRequest):
             "time_saved_minutes": 5
         }
     }
+    
+@app.get("/health")
+async def health():
+    return {"status": "healthy"}
 
 
 if __name__ == "__main__":

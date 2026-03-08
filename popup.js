@@ -34,16 +34,19 @@ document.addEventListener("DOMContentLoaded", () => {
 			const reasoning = document.getElementById("reasoningSelect").value;
 			const format = document.getElementById("formatSelect").value;
 
-			const response = await fetch("http://localhost:8000/enhance", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({
-					prompt: text,
-					persona: persona,
-					reasoning: reasoning,
-					format: format,
-				}),
-			});
+			const response = await fetch(
+				"https://prompt-enhancer-ext.onrender.com/enhance",
+				{
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
+						prompt: text,
+						persona: persona,
+						reasoning: reasoning,
+						format: format,
+					}),
+				},
+			);
 
 			if (!response.ok) throw new Error(`Server error: ${response.status}`);
 
