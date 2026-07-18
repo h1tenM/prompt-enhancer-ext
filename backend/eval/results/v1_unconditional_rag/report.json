@@ -1,0 +1,44 @@
+{
+  "target_model": "gemini/gemini-3-flash-preview",
+  "judge_model": "gemini/gemini-3-flash-preview",
+  "enhancers": {
+    "gemini/gemini-3-flash-preview": {
+      "n_prompts": 12,
+      "wins": 0,
+      "losses": 10,
+      "ties": 2,
+      "win_rate_pct": 0.0,
+      "avg_overhead_tokens": 1793,
+      "avg_baseline_tokens": 1296,
+      "avg_enhanced_tokens": 2431,
+      "token_overhead_pct": 226.0,
+      "token_cost": null,
+      "by_domain": {
+        "academic_writing": {
+          "n": 2,
+          "win_rate_pct": 0.0
+        },
+        "competitive_programming": {
+          "n": 2,
+          "win_rate_pct": 0.0
+        },
+        "data_science": {
+          "n": 2,
+          "win_rate_pct": 0.0
+        },
+        "general": {
+          "n": 2,
+          "win_rate_pct": 0.0
+        },
+        "low_level_systems": {
+          "n": 2,
+          "win_rate_pct": 0.0
+        },
+        "math_proofs": {
+          "n": 2,
+          "win_rate_pct": 0.0
+        }
+      }
+    }
+  }
+}

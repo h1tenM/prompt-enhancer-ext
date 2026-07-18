@@ -1,0 +1,7 @@
+{
+  "win_rate_pct": 0.0,
+  "n_prompts": 12,
+  "enhancer_model": "gemini/gemini-3-flash-preview",
+  "judge_model": "gemini/gemini-3-flash-preview",
+  "measured_at": "2026-07-18"
+}

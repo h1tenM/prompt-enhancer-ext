@@ -1,0 +1,13 @@
+enhancer,prompt_id,domain,winner,enhancement_tokens,baseline_tokens,enhanced_tokens
+gemini/gemini-3-flash-preview,cp-01,competitive_programming,baseline,1251,1394,3344
+gemini/gemini-3-flash-preview,cp-02,competitive_programming,baseline,1506,1314,1683
+gemini/gemini-3-flash-preview,aw-01,academic_writing,baseline,2066,1354,1024
+gemini/gemini-3-flash-preview,aw-02,academic_writing,tie,2144,1194,2833
+gemini/gemini-3-flash-preview,ll-01,low_level_systems,tie,1511,1720,3288
+gemini/gemini-3-flash-preview,ll-02,low_level_systems,baseline,1345,1438,3145
+gemini/gemini-3-flash-preview,mp-01,math_proofs,baseline,1619,1311,2216
+gemini/gemini-3-flash-preview,mp-02,math_proofs,baseline,1856,1158,2164
+gemini/gemini-3-flash-preview,ds-01,data_science,baseline,3231,719,4211
+gemini/gemini-3-flash-preview,ds-02,data_science,baseline,1562,1682,1179
+gemini/gemini-3-flash-preview,gen-01,general,baseline,1460,1139,1664
+gemini/gemini-3-flash-preview,gen-02,general,baseline,1966,1124,2420
