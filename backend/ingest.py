@@ -1,34 +1,45 @@
-import os
-from langchain_community.vectorstores import Chroma
-from langchain_community.document_loaders import TextLoader, DirectoryLoader, PyPDFLoader
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+"""Rebuild the vector DB from scratch using the bundled research_docs/.
 
-# 1. Initialize Embeddings (Same as main.py)
-embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+Docs added through the extension live in the same collection, so this wipes
+everything first — run it only when you want a clean, known index.
+Day-to-day, add and remove docs through the extension's Sources panel instead.
+"""
+
+import os
+import shutil
+
+from langchain_chroma import Chroma
+from langchain_huggingface import HuggingFaceEmbeddings
+
+from doc_store import DocStore
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_DIR = os.path.join(BASE_DIR, "db")
+SEED_DIR = os.path.join(BASE_DIR, "research_docs")
+
 
 def build_vector_db():
-    # 2. Load documents from the research folder
-    # This handles both .txt and .pdf files
+    if os.path.exists(DB_DIR):
+        print(f"Removing existing database at {DB_DIR}...")
+        shutil.rmtree(DB_DIR)
+
     print("Reading research documents...")
-    loader = DirectoryLoader('./research_docs', glob="./*.txt", loader_cls=TextLoader)
-    # Uncomment below to process pdf files
-    # loader = DirectoryLoader('./research_docs', glob="./*.pdf", loader_cls=PyPDFLoader)
-    
-    docs = loader.load()
+    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    vectorstore = Chroma(persist_directory=DB_DIR, embedding_function=embeddings)
 
-    # 3. Split text into chunks
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
-    chunks = text_splitter.split_documents(docs)
-
-    # 4. Create and save the database
-    print(f"Creating vector database with {len(chunks)} chunks...")
-    vectorstore = Chroma.from_documents(
-        documents=chunks, 
-        embedding=embeddings, 
-        persist_directory="./db"
+    store = DocStore(
+        vectorstore,
+        os.path.join(DB_DIR, "docs.json"),
+        seed_dir=SEED_DIR,
     )
-    print("Database saved to ./db folder!")
+
+    docs = store.list()
+    total_chunks = sum(d["chunks"] for d in docs)
+    print(f"Created vector database with {total_chunks} chunks from {len(docs)} docs:")
+    for d in docs:
+        print(f"  - {d['name']} ({d['chunks']} chunks)")
+    print(f"Database saved to {DB_DIR}!")
+
 
 if __name__ == "__main__":
     build_vector_db()

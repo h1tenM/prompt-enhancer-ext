@@ -1,8 +1,11 @@
 fastapi
 uvicorn
 pydantic
+python-multipart
+httpx
 langchain-chroma
 langchain-huggingface
 langchain-google-genai
+langchain-text-splitters
 python-dotenv
 sentence-transformers

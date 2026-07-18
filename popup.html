@@ -19,7 +19,7 @@
 				<option value="Senior Software Engineer">💻 Software Engineer</option>
 				<option value="Creative Content Writer">✍️ Creative Writer</option>
 				<option value="Data Scientist">📊 Data Scientist</option>
-				<option value="Legal & Compliance Expert">⚖️ Legal Expert</option>
+				<option value="Legal &amp; Compliance Expert">⚖️ Legal Expert</option>
 			</select>
 
 			<label>Reasoning:</label>
@@ -38,26 +38,64 @@
 			</select>
 		</div>
 
-		<div id="loading" class="hidden">🧠 Searching knowledge base...</div>
+		<!-- Knowledge base management -->
+		<div class="sources-section">
+			<button id="sourcesToggle" class="link-btn" type="button">
+				📚 Knowledge Base <span id="sourcesCount"></span>
+			</button>
 
-		<div id="metricsDashboard" class="metrics-container hidden">
-			<div class="metric-box">
-				<span class="metric-value" id="valTokens">0</span>
-				<span class="metric-label">Tokens Saved</span>
-			</div>
-			<div class="metric-box">
-				<span class="metric-value" id="valPrompts">0</span>
-				<span class="metric-label">Prompts Avoided</span>
-			</div>
-			<div class="metric-box">
-				<span class="metric-value" id="valTime">0</span>
-				<span class="metric-label">Mins Saved</span>
+			<div id="sourcesPanel" class="hidden">
+				<div id="sourcesList" class="sources-list">
+					<div class="sources-empty">Loading…</div>
+				</div>
+
+				<div class="add-doc">
+					<input
+						id="newDocName"
+						type="text"
+						placeholder="Document name (e.g. 'SQL Style Guide')"
+					/>
+					<textarea
+						id="newDocText"
+						class="small-area"
+						placeholder="Paste your prompt-engineering notes here…"
+					></textarea>
+
+					<div class="file-row">
+						<label for="newDocFile" class="file-label">
+							📎 <span id="fileLabelText">Choose .txt file</span>
+						</label>
+						<input id="newDocFile" type="file" accept=".txt,text/plain" />
+					</div>
+
+					<button id="addDocBtn" class="secondary-btn" type="button">
+						+ Add Document
+					</button>
+					<div id="sourcesStatus" class="status-msg hidden"></div>
+				</div>
 			</div>
 		</div>
 
 		<button id="enhanceBtn">Enhance Prompt</button>
 
-		<div id="loading" class="hidden">🧠 Searching knowledge base...</div>
+		<div id="loading" class="hidden">🧠 Searching knowledge base…</div>
+
+		<div id="metricsDashboard" class="metrics-container hidden">
+			<div class="metric-box">
+				<span class="metric-value" id="valWinRate">—</span>
+				<span class="metric-label">Win Rate</span>
+			</div>
+			<div class="metric-box">
+				<span class="metric-value" id="valTokens">0</span>
+				<span class="metric-label">Tokens Used</span>
+			</div>
+			<div class="metric-box">
+				<span class="metric-value" id="valCount">0</span>
+				<span class="metric-label">Enhancements</span>
+			</div>
+		</div>
+
+		<div id="metricsNote" class="metrics-note hidden"></div>
 
 		<textarea id="outputArea" class="hidden" readonly></textarea>
 

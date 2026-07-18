@@ -19,6 +19,13 @@ backend/api_key_test.py
 # to ensure everyone starts with a fresh or controlled index.
 backend/db/*.sqlite3
 backend/db/**/*.bin
+# Locally-added research docs; the manifest is per-user state, not source.
+backend/db/docs.json
+
+# --- Eval ---
+# Downloaded benchmark datasets. results/ IS tracked: those numbers are the
+# evidence behind the README's claims.
+backend/eval/.cache/
 
 # --- OS / IDE Junk ---
 .DS_Store

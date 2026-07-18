@@ -97,3 +97,159 @@ button:hover {
 	text-transform: uppercase;
 	margin-top: 2px;
 }
+
+.metrics-note {
+	font-size: 9px;
+	color: #5f6368;
+	line-height: 1.4;
+	margin: -6px 0 10px;
+	text-align: center;
+}
+
+/* Knowledge Base Panel */
+.sources-section {
+	margin-bottom: 10px;
+}
+
+.link-btn {
+	width: 100%;
+	background: none;
+	border: 1px solid #cce0ff;
+	color: #1a73e8;
+	text-align: left;
+	padding: 7px 10px;
+	font-size: 12px;
+	margin-bottom: 0;
+}
+
+.link-btn:hover {
+	background-color: #e8f0fe;
+}
+
+#sourcesCount {
+	color: #5f6368;
+	font-weight: normal;
+}
+
+#sourcesPanel {
+	border: 1px solid #cce0ff;
+	border-top: none;
+	border-radius: 0 0 6px 6px;
+	padding: 10px;
+	background: #fdfdfd;
+}
+
+.sources-list {
+	max-height: 130px;
+	overflow-y: auto;
+	margin-bottom: 10px;
+}
+
+.source-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 4px 2px;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.source-row:last-child {
+	border-bottom: none;
+}
+
+.source-name {
+	flex: 1;
+	font-size: 12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.remove-btn {
+	width: auto;
+	background: none;
+	color: #999;
+	font-size: 16px;
+	padding: 0 5px;
+	margin: 0;
+	line-height: 1;
+}
+
+.remove-btn:hover {
+	background: none;
+	color: #d93025;
+}
+
+.sources-empty {
+	font-size: 11px;
+	color: #888;
+	font-style: italic;
+	padding: 6px 2px;
+}
+
+.add-doc input[type="text"] {
+	width: 100%;
+	padding: 7px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	font-family: inherit;
+	font-size: 12px;
+	margin-bottom: 8px;
+}
+
+.small-area {
+	height: 55px !important;
+	font-size: 12px;
+	margin-bottom: 8px !important;
+}
+
+.file-row {
+	margin-bottom: 8px;
+}
+
+.file-row input[type="file"] {
+	display: none;
+}
+
+.file-label {
+	display: block;
+	font-size: 11px;
+	color: #1a73e8;
+	cursor: pointer;
+	padding: 5px 0;
+}
+
+.file-label:hover {
+	text-decoration: underline;
+}
+
+.secondary-btn {
+	background-color: #f1f3f4;
+	color: #1a73e8;
+	border: 1px solid #cce0ff;
+	font-size: 12px;
+	padding: 7px;
+	margin-bottom: 0;
+}
+
+.secondary-btn:hover {
+	background-color: #e8f0fe;
+}
+
+.secondary-btn:disabled {
+	color: #999;
+	cursor: default;
+}
+
+.status-msg {
+	font-size: 11px;
+	color: #188038;
+	margin-top: 7px;
+	text-align: center;
+}
+
+.status-msg.error,
+.sources-empty.error {
+	color: #d93025;
+}
